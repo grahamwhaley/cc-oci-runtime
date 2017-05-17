@@ -207,6 +207,22 @@ Quick start, just run::
 
   $ ./autogen.sh && make
 
+    If you get an error such as
+        configure.ac:43: error: Please install autoconf-archive version ${autoconf_archive_version}
+        configure.ac:38: MACRO_CHECK is expanded from...
+        configure.ac:43: the top level
+        autom4te: /usr/bin/m4 failed with exit status: 1
+        aclocal: error: echo failed with exit status: 1
+        autoreconf: aclocal failed with exit status: 1
+
+    then you are probably missing a good enough autoconf-archive. A quick workaround
+    for this is to execute the following
+
+    $ ./installation/curl-autoconf-archive.sh
+
+This will install the required m4 macros into the `m4` subdirectory.
+
+
 If you have specific requirements, run::
 
   $ ./configure --help
